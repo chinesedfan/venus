@@ -8,7 +8,7 @@
         "../src/topology/topology.js",
         "../src/topology/node.js",
         "../src/topology/controlpanel.js",
-        "../src/topology/topology_rebuild.js",
+        "../src/topology/topology.js",
         "../src/topology/ga.js"
     ],
     "output":"topology"
