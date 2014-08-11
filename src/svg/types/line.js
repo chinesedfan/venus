@@ -320,6 +320,11 @@
                                 }
                             })
                         }
+                        // in order to be triggered outside
+                        dot[0].highlight = function() {
+                            activeDot(dot);
+                            dot._selected_ = true;
+                        };
 
                         //save the dots
                         dots.push(dot);
