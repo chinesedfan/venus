@@ -1,3 +1,9 @@
+;
+(function () {
+    Venus.Topology = {
+
+    };
+})();
 (function () {
     var index = 0;
     var Node = function (info) {

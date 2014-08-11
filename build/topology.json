@@ -5,7 +5,6 @@
         "../src/common/venus.js",
         "../src/common/common.js",
         "../src/common/customevent.js",
-        "../src/topology/topology.js",
         "../src/topology/node.js",
         "../src/topology/controlpanel.js",
         "../src/topology/topology.js",
