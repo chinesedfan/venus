@@ -1,0 +1,11 @@
+{
+    "input":[
+        "../src/common/lang.js",
+        "../lib/KineticJS/dist/kinetic-core.js",
+        "../src/common/venus.js",
+        "../src/common/common.js",
+        "../src/common/customevent.js",
+        "../src/canvas/canvaschart.js"
+    ],
+    "output":"canvaschart"
+}
