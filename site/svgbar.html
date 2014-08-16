@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Venus，前端可视化方案</title>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36468754-1']);
+  _gaq.push(['_trackPageview']);
+var vga=function(key){_gaq.push(['_trackPageview', key||''])},pageTracker={_trackPageview:vga};
+</script>
+<link type="text/css" rel="stylesheet" href="Styles/SyntaxHighlighter.css"></link>
+<link type="text/css" rel="stylesheet" href="Styles/page.css"></link>
+</head>
+<body>
+	<div class="header">
+    	<div class="header-cont clearfix">
+            <a class="header-logo" href="index.html"><img src="image/logonew.png" /></a>
+            <div class="header-nav">
+            	<ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="api.html">接口文档</a></li>
+                    <li><a href="svgpie.html">演示</a></li>
+                    <li class="J_menu"><a href="svgcase.html">案例</a></li>
+                    <li><a href="min/builder/">下载</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+	<div class="nav">
+		<ul class="btn-list clearfix">
+			<li><a href="svgpie.html" class="btns">饼状图</a></li>
+			<li><a href="svgline.html" class="btns">线状图</a></li>
+			<li><a href="svgdot.html" class="btns">点状图</a></li>
+			<li><a href="svgbar.html" class="btns">柱状图</a></li>
+			<li><a href="../app/darkbat/topology.html" class="btns" target="_blank">拓扑图</a></li>
+			<li><a href="heatmap.html" class="btns" target="_blank">热力图</a></li>
+		</ul>
+    </div>
+    
+    <div class="cont-main clearfix">
+    	<div class="sidebar">
+			<h3 class="toggler first"><a href="javascript:void(0)">设置画布</a></h3>
+			<div class="accordion">
+			<ul>
+			<li><label>画布的宽度：</label><input id="J_stageWidth" type="text" class="g-input"/></li>
+			<li><label>画布的高度：</label><input id="J_stageHeight" type="text" class="g-input" /></li>
+			<li><a id="J_stageSize" class="button white">看看</a></li>
+			</ul>
+			</div>
+			
+			
+			<h3 class="toggler"><a href="javascript:void(0)">设置动画</a></h3>
+			<div class="accordion">
+			<ul>
+			<li>
+				<label>有木有动画：</label>
+				<select class="sel" data-type="ease">
+				<option value="1" selected="true">有</option>
+				<option value="0">木有</option>
+            	</select>
+            </li>
+			</ul>
+			</div>
+			<!-- 英雄本色 -->
+			<h3 class="toggler"><a href="javascript:void(0)">英雄本色</a></h3>
+			<div class="accordion">
+			<ul>
+			
+			<li>
+				<label>横轴柱宽：</label>
+				<select class="sel" data-type="XWidth">
+					<option value="50">50</option>
+					<option value="100">100</option>
+					<option value="150" selected="true">150</option>
+					<option value="150">200</option>
+            	</select>
+			</li>
+			
+			<li>
+				<label>竖轴柱宽：</label>
+				<select class="sel" data-type="YWidth">
+					<option value="10">10</option>
+					<option value="20">20</option>
+					<option value="30" selected="true">30</option>
+					<option value="40">40</option>
+            	</select>
+			</li>
+			
+			<li>
+				<label>动画的半径：</label>
+				<select class="sel" data-type="radius">
+					<option value="0" selected="true">0</option>
+					<option value="2">2</option>
+					<option value="4">4</option>
+					<option value="8">8</option>
+					<option value="10">10</option>
+					<option value="12">12</option>
+					<option value="16">16</option>
+            	</select>
+			</li>
+			
+			<li>
+				<label>透明度：</label>
+				<select class="sel" data-type="opacity">
+					<option value="0">0</option>
+					<option value="0.2">0.2</option>
+					<option value="0.4">0.4</option>
+					<option value="0.6">0.6</option>
+					<option value="0.8">0.8</option>
+					<option value="1.0" selected="true">1</option>
+            	</select>
+			</li>
+            
+			<li>
+				<label>柱状排列：</label>
+				<select class="sel" data-type="multiple">
+					<option value="nesification">层叠</option>
+					<option value="sidebyside" selected="true">并排</option>
+            	</select>
+			</li>
+			
+			</ul>
+			</div>
+			
+			<h3 class="toggler"><a href="javascript:void(0)">设置图例</a></h3>
+			<div class="accordion">
+			<ul>
+			<li>
+				<label>显示图例吗：</label>
+				<select class="sel" data-type="showLegend">
+					<option value="1" selected="true">显示</option>
+					<option value="0">不显示</option>
+            	</select>
+			</li>
+			
+			<li>
+				<label>水平或竖直：</label>
+				<select class="sel" data-type="direction">
+					<option value="vertical">vertical</option>
+					<option value="horizontal" selected="true">horizontal</option>
+            	</select>
+			</li>
+			
+			<li>
+				<label>图例的类型：</label>
+				<select class="sel" data-type="legendType">
+					<option value="rect" selected="true">rect</option>
+					<option value="circle">circle</option>
+            	</select>
+			</li>
+			
+			<li>
+				<label>图例的位置：</label>
+				<select class="sel" data-type="legendPosition">
+					<option value="right-top">右上角</option>
+					<option value="right-bottom">右下角</option>
+					<option value="left-top">左上角</option>
+					<option value="left-bottom">左下角</option>
+					<option value="center-top" selected="true">上侧居中</option>
+					<option value="center-bottom">下侧居中</option>
+            	</select>
+			</li>
+			
+			</ul>
+			</div>
+			
+			<h3 class="toggler"><a href="javascript:void(0)">设置网格</a></h3>
+			<div class="accordion">
+			<ul>
+			<li>
+				<label>横向网格：</label>
+				<select class="sel" data-type="enableRow">
+					<option value="0">显示</option>
+					<option value="1" selected="true">不显示</option>
+				</select>
+			</li>
+			
+			<li>
+				<label>竖向网格：</label>
+				<select class="sel" data-type="enableColumn">
+					<option value="0">显示</option>
+					<option value="1" selected="true">不显示</option>
+				</select>
+			</li>
+			
+			</ul>
+			</div>
+
+
+			<h3 class="toggler last"><a href="javascript:void(0)">设置坐标轴</a></h3>
+			<div class="accordion">
+			<a class="btns axis-dir" data-type="left-bottom" href="javascript:;">左下轴</a>
+			<a class="btns axis-dir" data-type="left-top" href="javascript:;">左上轴</a>
+			<a class="btns axis-dir" data-type="right-bottom" href="javascript:;">右下轴</a>
+			<a class="btns axis-dir" data-type="right-top" href="javascript:;">右上轴</a>
+			<a class="btns axis-dir" data-type="single-xy" href="javascript:;">单轴XY</a>
+			<a class="btns axis-dir" data-type="single-dl" href="javascript:;">左倒立</a>
+			<a class="btns axis-dir" data-type="single-dr" href="javascript:;">右倒立</a>
+			</div>
+
+    	</div>
+    	<div class="content">
+    		<div id="chart_container" class="chart-box"></div>
+    	</div>
+    </div>
+    <!-- footer begins -->
+	<div class="footer footer-static clearfix">
+	  <ul>
+	    <li><a target="_blank" href="http://www.dianping.com/aboutus" rel="nofollow">关于大众点评</a>|</li>
+	    <li><a target="_blank" href="http://www.dianping.com/" rel="nofollow">大众点评网</a>|</li>
+	    <li><a target="_blank" href="http://t.dianping.com/" rel="nofollow">点评团</a>|</li>
+	    <li><a target="_blank" href="index.html" rel="nofollow">关于我们</a></li>
+	  </ul>      
+	  <p>©2012 点评商务前端团队, All Rights Reserved.　　本站发布的所有内容，未经许可，不得转载。</p>      
+	</div>
+	<!-- footer ends -->
+	<a class="toTop" id="toTop" href="#top"></a>
+	<script type="text/javascript">
+	 (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	<script type="text/javascript" src="Scripts/g.mt.js"></script>
+    <script type="text/javascript" src="Scripts/accordion.js"></script> 
+	<script type="text/javascript" src="../build/svgchart.latest.min.js"></script>
+
+	<script type="text/javascript" src="Scripts/g.dp.js"></script>
+	<script type="text/javascript">
+	window.addEvent('domready', function() {
+		// Myra.app.dropMenu();
+		TG.app.toTop();
+	});
+	</script>
+	<script type="text/javascript">
+var container = document.getElementById('chart_container'),
+            barData = [],
+            barOptions = {
+            	width: 900,
+            	height: 500,
+                axis:{
+                    x:{
+                    	opposite:false,
+                        ticks:['Q1', 'Q2', 'Q3', 'Q4']
+                    },
+                    y:{
+                        min:0
+                    }
+                },
+                bar:{
+                    radius:0
+                },
+                grid:{
+                    //enableRow:true,
+                    //enableColumn:true
+                },
+                legend:{
+                    direction:'horizontal',
+                    position:['center','top']
+                }
+            }
+    for (var i = 0, l = 3; i < l; i++) {
+        var arr = {}
+        barOptions.axis.x.ticks.forEach(function (month) {
+            arr[month] = parseInt(Math.random() * 100)
+        })
+        barData.push({name:i, data:arr});
+    }
+    var bar = new Venus.SvgChart(container, barData, barOptions);
+
+	//
+	$('J_stageSize').addEvent('click', function() {
+		var widthVal = $('J_stageWidth').value,
+			heightVal = $('J_stageHeight').value;
+			
+		widthVal = (widthVal !== '') ? parseInt(widthVal) : 900;
+		heightVal = (heightVal !== '') ? parseInt(heightVal) : 800;
+		
+		barOptions.width = widthVal;
+		barOptions.height = heightVal;
+		
+		bar = null;
+		container.innerHTML = '';
+		new Venus.SvgChart(container, barData, barOptions);
+	});
+
+	$$('.axis-dir').addEvent('click', function (e) {
+		e && e.preventDefault();
+		var _this = $(this),
+			axisDataX = {
+                ticks:['Q1', 'Q2', 'Q3', 'Q4']
+			},
+			axisDataY = {
+				min:0
+			},
+			attr = _this.getProperty('data-type');
+		if(attr == 'left-bottom') {
+			barOptions.axis.x = axisDataX;
+			barOptions.axis.y = axisDataY;
+			barOptions.axis.x.opposite = false;
+			barOptions.axis.y.opposite = false;
+			barOptions.axis.x1 = null;
+			barOptions.axis.y1 = null;
+			barOptions.axisUsage = null;
+		} else if(attr == 'left-top') {
+			barOptions.axis.x = axisDataX;
+			barOptions.axis.y = axisDataY;
+			barOptions.axis.x.opposite = true;
+			barOptions.axis.y.opposite = false;
+			barOptions.axis.x1 = null;
+			barOptions.axis.y1 = null;
+			barOptions.axisUsage = null;
+		} else if(attr == 'right-bottom') {
+			barOptions.axis.x = axisDataX;
+			barOptions.axis.y = axisDataY;
+			barOptions.axis.x.opposite = false;
+			barOptions.axis.y.opposite = true;
+			barOptions.axis.x1 = null;
+			barOptions.axis.y1 = null;
+			barOptions.axisUsage = null;
+		} else if(attr =='right-top') {
+			barOptions.axis.x = axisDataX;
+			barOptions.axis.y = axisDataY;
+			barOptions.axis.x.opposite = true;
+			barOptions.axis.y.opposite = true;
+			barOptions.axis.x1 = null;
+			barOptions.axis.y1 = null;
+			barOptions.axisUsage = null;
+		} else if(attr == 'single-xy') {
+			barOptions.axis.x = axisDataX;
+			barOptions.axis.y = axisDataY;
+			barOptions.axis.x1 = null;
+			barOptions.axis.y1 = null;
+			barOptions.axisUsage = null;
+		} else if(attr == 'single-dl') {
+			barOptions.axis.x = axisDataX;
+			barOptions.axis.y = axisDataY;
+			barOptions.axis.x.rotate = 90;
+			barOptions.axis.y.rotate = 0;
+			barOptions.axis.x1 = null;
+			barOptions.axis.y1 = null;
+			barOptions.axisUsage = null;
+		} else if(attr == 'single-dr') {
+			barOptions.axis.x = axisDataX;
+			barOptions.axis.y = axisDataY;
+			barOptions.axis.x.rotate = 90;
+			barOptions.axis.y.rotate = 0;
+			barOptions.axis.x.opposite = true;
+			barOptions.axis.x1 = null;
+			barOptions.axis.y1 = null;
+			barOptions.axisUsage = null;
+		}
+		container.innerHTML = '';
+		new Venus.SvgChart(container, barData, barOptions);
+	});
+
+
+	//
+	$$('.accordion select').addEvent('change', function () {
+		var _this = $(this),
+	    	val = _this.value,
+			attr = _this.getProperty('data-type');
+		switch(attr) {
+			case 'ease':
+				if(val == '0') barOptions.bar.beginAnimate = false;
+				else { barOptions.bar.beginAnimate = true; }
+				break;
+			case 'radius':
+				barOptions.bar.radius = parseInt(val);
+				break;
+			case 'opacity':
+				barOptions.bar.opacity = parseFloat(val);
+				break; 
+			case 'XWidth':
+				barOptions.axis.x.tickWidth = val;
+				break;
+			case 'YWidth':
+				barOptions.axis.y.tickWidth = val;
+				break;
+		    case 'multiple':                  
+				barOptions.bar.multiple = val; 
+				break;
+			case 'enableRow':
+				if(val == '0') barOptions.grid.enableRow = true;
+				else { barOptions.grid.enableRow = false; }
+				break;
+			case 'enableColumn':
+				if(val == '0') barOptions.grid.enableColumn = true;
+				else { barOptions.grid.enableColumn = false; }
+				break;
+			case 'showLegend':
+				if (val == '1') barOptions.legend = {};
+				else { barOptions.legend = null; }
+				break;
+			case 'direction':
+				barOptions.legend && (barOptions.legend.direction = val);
+				break;
+			case 'legendType':
+				barOptions.legend && (barOptions.legend.itemType = val);
+				break;
+			case 'legendPosition':
+				var arr = [];
+				arr = val.split('-');
+				barOptions.legend && (barOptions.legend.position = arr);
+				break;
+			case 'enableRow':
+				if(val == '0') barOptions.grid.enableRow = true;
+				else { barOptions.grid.enableRow = false; }
+				break;
+			case 'enableColumn':
+				if(val == '0') barOptions.grid.enableColumn = true;
+				else { barOptions.grid.enableColumn = false; }
+				break;
+			default: break; 
+		}
+		bar = null;
+		container.innerHTML = '';
+		new Venus.SvgChart(container, barData, barOptions);
+	});
+	</script>
+    
+</body>
+</html>

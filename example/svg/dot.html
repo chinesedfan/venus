@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="example.svg.css" />
+	<title>Bar-DPChart</title>
+</head>
+<body>
+	<div id="chart_container" style="height: 750px; width:1000px; border: dashed 1px #ccc; margin: 10px auto 0;"></div>
+
+	<script type="text/javascript" src="../../build/svgchart.js"></script>
+	
+	<script type="text/javascript">
+	var container = document.getElementById('chart_container'),
+            data = [25,25,40,10,5,10,22,33],
+            options = {
+                axis:{
+                    x:{
+                        ticks:['FF', 'IE', 'Chrome', 'other']
+
+                    },
+                    y:{
+                    }
+                }, dot:{}
+            }
+	
+	data=[];
+	for (var i = 0, l = 4; i < l; i++) {
+        var arr = []
+        options.axis.x.ticks.forEach(function (month) {
+            //arr[month] = parseInt(Math.random() * 100)
+			arr.push(parseInt(Math.random() * 40+20))
+        })
+        data.push({name:options.axis.x.ticks[i], data:arr})
+    }
+	
+	
+	//console.log(data);
+    var dot = new Venus.SvgChart(container, data, options);
+	</script>
+</body>
+</html>

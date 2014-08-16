@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="example.svg.css" />
+	<style type="text/css">
+	body{background:#2d2d2d;}
+	input{margin:4px; border:#dfdfdf 1px solid; height:40px; width:56px;}
+	</style>
+	<title>Bar-DPChart</title>
+</head>
+<body>	
+	<script type="text/javascript" src="../../build/svgchart.js"></script>
+	
+	<script type="text/javascript">
+	var L=100;
+	var c=Venus.util.getColors(L);
+	for(var i=0;i<L;i++){
+		var a=document.createElement('input');
+		a.type='text';
+		a.style.cssText='background-color:'+c[i];
+		document.body.appendChild(a);
+	}
+	</script>
+</body>
+</html>

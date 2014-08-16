@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>pie canvas example</title>
+</head>
+<body>
+<script type="text/javascript" src="../../build/canvaschart.js"></script>
+<script type="text/javascript" src="../../src/canvas/types/pie.js"></script>
+<div id="chart_container_index" style="height: 400px; width:600px;"></div>
+<div id="chart_container_tuangou" style="height: 400px; width:600px;"></div>
+<script type="text/javascript">
+    var container_tuangou = document.getElementById('chart_container_tuangou'),
+        container_index = document.getElementById('chart_container_index'),
+
+            //主站的数据
+            data_tuangou = [
+                {data:0.1693, label:"IE-6"},
+                {data:0.0605, label:"IE-7"},
+                {data:0.4124, label: "IE-8"},
+                {data:0.1046, label: "IE-9"},
+                {data:0.145, label: "Chrome"},
+                {data:0.02, label: "Firefox"},
+                {data:0.035, label: "Safari"},
+                {data:0.0532, label: "Others"}
+            ],
+
+            data_index = [
+                {data:0.1461, label:"IE-6"},
+                {data:0.0534, label:"IE-7"},
+                {data:0.3644, label: "IE-8"},
+                {data:0.1051, label: "IE-9"},
+                {data:0.17, label: "Chrome"},
+                {data:0.032, label: "Firefox"},
+                {data:0.06, label: "Safari"},
+                {data:0.069, label: "Others"}
+            ],
+
+            options = {
+                width: 600,
+                height: 400,
+                margin:30,
+                pie:{
+                    radius:100,
+                    easing:"back-ease-out",
+				    needTip: true
+                },
+                legend:{
+                    height: 200,
+                    itemType:"rect",
+                    position:[500,80]
+                }
+
+            };
+    new Venus.CanvasChart(container_tuangou, data_tuangou, options);
+    new Venus.CanvasChart(container_index, data_index, options);
+</script>
+</body>
+</html>

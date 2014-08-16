@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test svg</title>
+</head>
+<body style="margin: 0;">
+	<script src="../../build/svgchart.js"></script>
+
+<div id="chart_container" style="height: 800px; width:1200px; border: dashed 1px #ccc; margin: 10px auto 0;"></div>
+    <div id="chart_container3" style="height: 800px; width:1200px; border: dashed 1px #ccc; margin: 10px auto 0;"></div>
+    <div id="chart_container2" style="height: 800px; width:1200px; border: dashed 1px #ccc; margin: 10px auto 0;"></div>
+
+<script type="text/javascript">
+    var container = document.getElementById('chart_container'),
+	data = [{
+		name:"0",
+		data:{
+			"Q1":11,
+			"Q2":30,
+			"Q3":40,
+			"Q4":99
+		},
+		type:"bar"
+	},{
+		name:"1",
+	 	data:{
+			"Q1":20,
+			"Q2":40,
+			"Q3":70,
+			"Q4":44
+		},
+		type:"line"
+	}],
+            options = {
+                axis:{
+                    x:{
+                        ticks:['Q1', 'Q2', 'Q3', 'Q4']
+                    },
+                    y:{
+                        rotate:90
+                    }
+                },
+                line:{
+
+                },
+                bar:{
+                    radius:2
+                },
+
+                grid:{
+                    enableRow:true,
+                    enableColumn:true
+                },
+                legend:{
+                    direction:'horizontal',
+                    position:['center','bottom']
+                }
+
+            }
+    var bar = new Venus.SvgChart(container, data, options);
+
+</script>
+</body>
+</html>

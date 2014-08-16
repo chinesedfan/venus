@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Venus，前端可视化方案</title>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36468754-1']);
+  _gaq.push(['_trackPageview']);
+var vga=function(key){_gaq.push(['_trackPageview', key||''])},pageTracker={_trackPageview:vga};
+</script>
+<link type="text/css" rel="stylesheet" href="Styles/SyntaxHighlighter.css"></link>
+<link type="text/css" rel="stylesheet" href="Styles/page.css"></link>
+<!--[if IE 6]>
+    <script src="Scripts/DD_belatedPNG.js"></script>
+    <script>DD_belatedPNG.fix('.pngfix'); </script>
+<![endif]-->
+</head>
+<body>
+	<div class="header">
+    	<div class="header-cont clearfix">
+            <a class="header-logo" href="index.html"><img src="image/logonew.png" /></a>
+            <div class="header-nav">
+            	<ul>
+                	<li><a href="index.html">首页</a></li>
+                    <li><a href="api.html" onclick="pageTracker._trackPageview('venus_api_doc');">接口文档</a></li>
+                    <li><a href="svgpie.html" onclick="pageTracker._trackPageview('venus_demo');">演示</a></li>
+                    <li class="J_menu"><a href="svgcase.html" onclick="pageTracker._trackPageview('venus_case');">案例</a></li>
+					<li><a href="min/builder/" onclick="pageTracker._trackPageview('venus_download');">下载</a></li>
+                </ul>
+		 </div>
+		</div>
+    </div>
+
+	<div class="main">
+		<div class="left-main">
+			<!-- introduction begins -->
+			<div class="intro-panel">
+				<div class="isay-top pngfix"></div>
+				<div class="isay-middle pngfix">
+					<div class="intro-box clearfix">
+						<h2>Venus Introdution</h2>
+						<div class="intro-cont">
+							<p>Venus is a flexible, modular JavaScript library designed for all the JavaScript developer.It give you a powerful solution for data visualization.Venus is builded on KineticJS and Raphaël.</p>
+							<p>KineticJS is an HTML5 Canvas JavaScript library that extends the 2d context by enabling high performance path detection and pixel detection for desktop and mobile applications.</p>
+							<p>Raphaël is a small JavaScript library that should simplify your work with vector graphics on the web. If you want to create your own specific chart or image crop and rotate widget, for example, you can achieve it simply and easily with this library.</p>
+							<p>Venus currently supports Firefox 3.0+, Safari 3.0+, Chrome 5.0+, Opera 9.5+ and Internet Explorer 6.0+.</p>
+							<p>Venus Developers: quanhua.ma, zhi.cun, xinwei.wang, yongliang.li, chao.wang @dpf2e-datavisualization-team.</p>
+						</div>
+					</div>
+				</div>
+				<div class="isay-bottom pngfix"></div>
+			</div>
+			<!-- introduction ends -->
+
+			<!-- example begins -->
+			<div class="demo-panel">
+				<div class="isay-top pngfix"></div>
+				<div class="isay-middle pngfix">
+					<div class="demo-box clearfix">
+						<h2>展示案例</h2>
+						<div class="demo-cont">
+							<ul class="demo-list">
+								<li><a target="_blank" class="icon" href="svgpie.html"><img src="image/example1.png" /></a></li>
+								<li><a target="_blank" class="icon" href="svgline.html"><img src="image/example2.png" /></a></li>
+								<li><a target="_blank" class="icon" href="svgdot.html"><img src="image/example3.png" /></a></li>
+								<li><a target="_blank" class="icon" href="svgbar.html"><img src="image/example4.png" /></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="isay-bottom pngfix"></div>
+			</div>
+			<!-- example ends -->
+			
+
+		</div>
+		<div class="right-main">
+
+			<div class="mark-panel">
+				<div class="isay-top pngfix"></div>
+				<div class="isay-middle pngfix">
+					<div class="mark-box clearfix">
+						<h2>拓扑图</h2>
+						<div class="heat-cont">
+					   		<a href="../app/darkbat/topology.html"><img src="image/tuopu.png" width="166" height="124"></a>
+						</div>
+					</div>
+				</div>
+				<div class="isay-bottom pngfix"></div>
+			</div>
+
+			<div class="mark-panel">
+				<div class="isay-top pngfix"></div>
+				<div class="isay-middle pngfix">
+					<div class="mark-box clearfix">
+						<h2>热力图</h2>
+						<div class="heat-cont">
+					   		<a href="heatmap.html"><img src="image/hotmap.jpg" width="166" height="124"></a>
+						</div>
+					</div>
+				</div>
+				<div class="isay-bottom pngfix"></div>
+			</div>
+
+			<div class="mark-panel">
+				<div class="isay-top pngfix"></div>
+				<div class="isay-middle pngfix">
+					<div class="mark-box clearfix">
+						<h2>快捷标签</h2>
+						<div class="mark-cont">
+							<ul class="mark-list">
+								<li><a href="svgpie.html">svg饼图</a></li>
+								<li><a href="svgline.html">svg线图</a></li>
+								<li><a href="svgdot.html">svg点图</a></li>
+								<li><a href="svgbar.html">svg柱状图</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="isay-bottom pngfix"></div>
+			</div>
+
+			<div class="m-menu">
+				<div class="menu-top pngfix"></div>
+				<div class="menu-middle clearfix pngfix">
+					<ul class="menu-list clearfix">
+						<li class="first">
+							<a target="_blank" href="navigator/index.html">商务前端导航</a>
+						</li>
+						<li><a target="_blank" href="http://www.kineticjs.com/">KineticJS</a></li>
+						<li><a target="_blank" href="http://raphaeljs.com/">RaphaelJS</a></li>
+						<li><a target="_blank" href="http://datavlab.org/">淘宝可视化</a></li>
+						<li><a target="_blank" href="http://f2e.dp/face/">点评前端Face</a></li>
+                        <li><a target="_blank" href="http://f2e.dp/blog/">点评前端博客</a></li>
+                        <li><a target="_blank" href="http://f2e.dp/wiki/">点评前端wiki</a></li>
+                        <li><a target="_blank" href="https://github.com/DPF2EBS/venus">Venus GitHub</a></li>
+                        <li><a target="_blank" href="http://venus.dp:8080">PageMender Chrome插件</a></li>
+					</ul>
+				</div>
+				<div class="menu-bottom pngfix"></div>
+			</div>
+			<!-- mark begins -->
+			
+			<!-- mark ends -->
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div class="footer footer-static clearfix">
+	  <ul>
+	    <li><a target="_blank" href="http://www.dianping.com/aboutus" rel="nofollow">关于大众点评</a>|</li>
+	    <li><a target="_blank" href="http://www.dianping.com/" rel="nofollow">大众点评网</a>|</li>
+	    <li><a target="_blank" href="http://t.dianping.com/" rel="nofollow">点评团</a>|</li>
+	    <li><a target="_blank" href="index.html" rel="nofollow">关于我们</a></li>
+	  </ul>      
+	  <p>©2012 点评商务前端团队, All Rights Reserved.　　本站发布的所有内容，未经许可，不得转载。</p>      
+	</div>
+
+	<a class="toTop" id="toTop" href="#top"></a>
+	<script type="text/javascript">
+	 (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	<script type="text/javascript" src="Scripts/g.mt.js"></script>
+	<script type="text/javascript" src="Scripts/g.dp.js"></script>
+	<script type="text/javascript">
+	window.addEvent('domready', function() {
+		TG.app.toTop();
+	});
+	</script>
+</body>
+</html>
