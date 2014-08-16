@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="venus : JS library for drawing statistics charts">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>venus</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/chinesedfan/venus">View on GitHub</a>
+
+          <h1 id="project_title">venus</h1>
+          <h2 id="project_tagline">JS library for drawing statistics charts</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/chinesedfan/venus/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/chinesedfan/venus/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>The original project has been abandoned for more than 2 years. But because of <a href="https://github.com/chinesedfan/hsrecorder">hsrecorder</a>, I discover it and want to reorganize it. My works here have little significance, except that let me remind something about PHP and obtain a first real try of Node.js. If someday the author or someone else wants to develop this project again, hope my documents can help.</p>
+
+<h1>
+<a name="branches" class="anchor" href="#branches"><span class="octicon octicon-link"></span></a>Branches</h1>
+
+<ul>
+<li>master: the reorganized result</li>
+<li>author: the original master branch</li>
+<li>dw-venus: the customized branch by our Data Warehouse colleagues</li>
+<li>issueX: refer to <a href="https://github.com/chinesedfan/venus/issues">issues</a>
+</li>
+</ul><h1>
+<a name="folders" class="anchor" href="#folders"><span class="octicon octicon-link"></span></a>Folders</h1>
+
+<ul>
+<li>app: real applications based on this project</li>
+<li>build: combo tools, config files and generated results
+
+<ul>
+<li>tool: the makefile is 'combo.js'</li>
+</ul>
+</li>
+<li>example: simple examples</li>
+<li>lib: depended libraries</li>
+<li>site: a website used to introduce this project</li>
+<li>src: source files
+
+<ul>
+<li>canvas: the first version 'svg' and unused now (I guess)</li>
+<li>common: common files</li>
+<li>heatmap: for drawing heat maps</li>
+<li>svg: for drawing basic charts</li>
+<li>topology: for drawing topology charts</li>
+</ul>
+</li>
+<li>test: unit test files</li>
+</ul><h1>
+<a name="changes" class="anchor" href="#changes"><span class="octicon octicon-link"></span></a>Changes</h1>
+
+<p>Mainly I delete files that I think non-sense, like .DS_Store files, history generated files, empty files and duplicated files. For example:</p>
+
+<ul>
+<li>'src/canvas/dpchart.js' is nearly the same with 'src/canvas/canvaschart.js', except some exposed interfaces for testing. </li>
+<li>'src/svg/svgchart_rebuild.js', 'svg/topology/topology_rebuild.js' behave the same like 'src/svg/svgchart.js', 'svg/topology/topology.js'. The author just created them in a certain commitment and stopped to update the original one.</li>
+</ul><p>Some new functionaries are also introduced, as described in <a href="https://github.com/chinesedfan/venus/issues/3">issue #3</a>. </p>
+
+<p>At last, folders 'app/example/test' are updated, but no all tests can be passed, as deprecated methods are tested.</p>
+
+<h1>
+<a name="notice" class="anchor" href="#notice"><span class="octicon octicon-link"></span></a>Notice</h1>
+
+<ul>
+<li>I didn't rebuild the file 'build/canvaschart.js' and 'build/topology.js' after their source files have been updated.</li>
+<li>The folder 'site' still has some used or duplicated files.</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">venus maintained by <a href="https://github.com/chinesedfan">chinesedfan</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
